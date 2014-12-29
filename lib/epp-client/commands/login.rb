@@ -15,6 +15,7 @@ module EPP
         node = super
         node << epp_node('clID', @tag, @namespaces || {})
         node << epp_node('pw', @passwd, @namespaces || {})
+        node << epp_node('newPW', @config[:newPW], @namespaces || {})
 
         options  = epp_node('options', @namespaces || {})
         options << epp_node('version', @config[:version], @namespaces || {})
